@@ -17,8 +17,11 @@ INCS = $(shell find . -maxdepth 1 -type f -name \*.$(INCEXT))
 BattleGame: $(OBJS)
 	$(CXX) $^ -o BattleGame
 
-DiceTest: $(OBJS)
+DiceTest: Dice.o DiceTest.o
 	$(CXX) $^ -o DiceTest 
+
+CharacterTest: Character.o CharacterTest.o
+	$(CXX) $^ -o CharacterTest 
 
 
 #AnimalTest: Animal.o AnimalTest.o
@@ -31,6 +34,9 @@ $(OBJS): $(SRCS) $(INCS)
 
 DiceTest.o: DiceTest.cpp
 	$(CXX) $(CXXFLAGS) -c DiceTest.cpp
+
+CharacterTest.o: CharacterTest.cpp
+	$(CXX) $(CXXFLAGS) -c CharacterTest.cpp
 
 #AnimalTest.o: ./test/AnimalTest.cpp
 #	$(CXX) $(CXXFLAGS) -c ./test/AnimalTest.cpp
