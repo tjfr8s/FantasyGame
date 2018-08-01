@@ -20,7 +20,7 @@ BattleGame: $(OBJS)
 DiceTest: Dice.o DiceTest.o
 	$(CXX) $^ -o DiceTest 
 
-CharacterTest: Character.o CharacterTest.o
+CharacterTest: Character.o CharacterTest.o Battle.o Vampire.o
 	$(CXX) $^ -o CharacterTest 
 
 
@@ -32,11 +32,6 @@ CharacterTest: Character.o CharacterTest.o
 $(OBJS): $(SRCS) $(INCS)
 	$(CXX) $(CXXFLAGS) -c $(@:.o=.$(SRCEXT))
 
-DiceTest.o: DiceTest.cpp
-	$(CXX) $(CXXFLAGS) -c DiceTest.cpp
-
-CharacterTest.o: CharacterTest.cpp
-	$(CXX) $(CXXFLAGS) -c CharacterTest.cpp
 
 #AnimalTest.o: ./test/AnimalTest.cpp
 #	$(CXX) $(CXXFLAGS) -c ./test/AnimalTest.cpp
