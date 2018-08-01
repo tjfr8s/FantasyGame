@@ -30,7 +30,8 @@ VampireTest: Character.o VampireTest.o Battle.o Vampire.o Dice.o
 MedusaTest: Character.o MedusaTest.o Battle.o Medusa.o Dice.o Vampire.o
 	$(CXX) $^ -o MedusaTest 
 
-BattleTest: Character.o BattleTest.o Battle.o Vampire.o Dice.o Medusa.o
+BattleTest: Character.o BattleTest.o Battle.o Vampire.o Dice.o Medusa.o \
+   	Barbarian.o HarryPotter.o
 	$(CXX) $^ -o BattleTest 
 
 
