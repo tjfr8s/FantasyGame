@@ -17,8 +17,6 @@ public:
         HARRYPOTTER,
     };
 protected:
-    int m_attack;
-    int m_defense;
     int m_armor;
     int m_strength;
     std::string m_traits;
@@ -30,9 +28,7 @@ protected:
     int m_atkDiceNum;
     
 public:
-    Character(int attack,
-              int defense, 
-              int armor,
+    Character(int armor,
               int strength,
               std::string traits,
               CharType type,

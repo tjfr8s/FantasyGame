@@ -1,23 +1,22 @@
 #include <iostream>
 #include "Battle.hpp"
 #include "Character.hpp"
-#include "Medusa.hpp"
-#include "Vampire.hpp"
+#include "Barbarian.hpp"
 
-Medusa::Medusa(Battle* battle): 
+Barbarian::Barbarian(Battle* battle): 
     Character(3, 8,"", Character::MEDUSA, battle, 6, 2, 6, 1)
 {}
 
-Medusa::~Medusa()
+Barbarian::~Barbarian()
 {}
 
-void Medusa::attack(Character* opponent)
+void Barbarian::attack(Character* opponent)
 {
     int roll = rollDice(m_atkDiceNum, m_atkDiceSides); 
     std::cout << "\nAttack roll: " << roll << "\n";
     if(roll == 12)
     {
-        std::cout << "Medusa used Glare!\n";
+        std::cout << "Barbarian used Glare!\n";
         m_battle->gameOver();
     }
     else if(opponent->defend(roll) <= 0)
@@ -27,7 +26,7 @@ void Medusa::attack(Character* opponent)
     }
 
 }
-int Medusa::defend(int attackRoll)
+int Barbarian::defend(int attackRoll)
 {
     int defRoll = rollDice(m_defDiceNum, m_defDiceSides);
     std::cout << "Defense roll: " << defRoll << "\n";
@@ -41,7 +40,7 @@ int Medusa::defend(int attackRoll)
 }
 
 
-bool Medusa::specDefend()
+bool Barbarian::specDefend()
 {
     return false;
 }

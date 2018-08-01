@@ -4,7 +4,7 @@
 #include "Vampire.hpp"
 
 Vampire::Vampire(Battle* battle): 
-    Character(12, 6, 1, 18,"", Character::VAMPIRE, battle, 6, 1, 12, 1)
+    Character(1, 18,"", Character::VAMPIRE, battle, 6, 1, 12, 1)
 {}
 
 Vampire::~Vampire()
