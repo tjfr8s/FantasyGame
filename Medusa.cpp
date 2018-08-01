@@ -19,8 +19,9 @@ void Medusa::attack(Character* opponent)
     {
         std::cout << "Medusa used Glare!\n";
         opponent->die();
+        opponent->defend(0);
     }
-    if(opponent->defend(roll) <= 0)
+    else if(opponent->defend(roll) <= 0)
     {
         m_battle->gameOver();
         m_battle->setWinner(this);
