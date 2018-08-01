@@ -13,6 +13,7 @@ public:
     virtual void attack(Character* opponent);
     virtual int defend(int attackRoll);
     virtual bool specDefend();
+    void hogwarts();
 
 };
 

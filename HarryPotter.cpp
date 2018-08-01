@@ -4,7 +4,7 @@
 #include "HarryPotter.hpp"
 
 HarryPotter::HarryPotter(Battle* battle): 
-    Character(0, 12,"", Character::BARBARIAN, battle, 6, 2, 6, 2)
+    Character(0, 10,"", Character::BARBARIAN, battle, 6, 2, 6, 2)
 {}
 
 HarryPotter::~HarryPotter()
@@ -31,9 +31,23 @@ int HarryPotter::defend(int attackRoll)
     {
         m_strength -= damage;
     }
+    if(m_strength <= 0 && m_hogwarts == true)
+    {
+        std::cout << "\nHogwarts!\n";
+        hogwarts();
+    }
+    if(m_strength <= 0)
+    {
+        m_battle->gameOver();
+    }
     return m_strength;
 }
 
+void HarryPotter::hogwarts()
+{
+    m_strength = 20;
+    m_hogwarts = false;
+}
 
 bool HarryPotter::specDefend()
 {
