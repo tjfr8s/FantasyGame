@@ -4,7 +4,7 @@
 #include "Barbarian.hpp"
 
 Barbarian::Barbarian(Battle* battle): 
-    Character(3, 8,"", Character::MEDUSA, battle, 6, 2, 6, 1)
+    Character(0, 12,"", Character::BARBARIAN, battle, 6, 2, 6, 2)
 {}
 
 Barbarian::~Barbarian()
@@ -14,12 +14,7 @@ void Barbarian::attack(Character* opponent)
 {
     int roll = rollDice(m_atkDiceNum, m_atkDiceSides); 
     std::cout << "\nAttack roll: " << roll << "\n";
-    if(roll == 12)
-    {
-        std::cout << "Barbarian used Glare!\n";
-        m_battle->gameOver();
-    }
-    else if(opponent->defend(roll) <= 0)
+    if(opponent->defend(roll) <= 0)
     {
         m_battle->gameOver();
         m_battle->setWinner(this);
@@ -44,4 +39,3 @@ bool Barbarian::specDefend()
 {
     return false;
 }
-
