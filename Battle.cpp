@@ -23,9 +23,9 @@ void Battle::playGame()
     while(!m_gameOver)
     {
         std::cout << "\n******************Round***************\n";
+        std::cout << "\nPlayer1:\n" << m_player1 << 
+            "\n\nPlayer2:\n" << m_player2 << "\n";
         playRound(); 
-        std::cout << "\n\nPlayer1:\n" << m_player1 << 
-            "\n\nPlayer2:\n" << m_player2;
     }
 
     if(m_player1 != nullptr)
@@ -63,6 +63,9 @@ void Battle::takeTurn(Character* attacker, Character* defender)
     {
         std::cout << "\nno attack\n";
     }
+
+    std::cout << "\n\nPlayer1:\n" << m_player1 << 
+        "\n\nPlayer2:\n" << m_player2 << "\n";
 }
 
 void Battle::menu()
