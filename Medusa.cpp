@@ -13,14 +13,14 @@ Medusa::~Medusa()
 
 void Medusa::attack(Character* opponent)
 {
-    int roll = rollDice(m_atkDiceNum, m_atkDiceSides); 
+    int roll = 12;//rollDice(m_atkDiceNum, m_atkDiceSides); 
     std::cout << "\nAttack roll: " << roll << "\n";
     if(roll == 12)
     {
         std::cout << "Medusa used Glare!\n";
-        m_battle->gameOver();
+        opponent->die();
     }
-    else if(opponent->defend(roll) <= 0)
+    if(opponent->defend(roll) <= 0)
     {
         m_battle->gameOver();
         m_battle->setWinner(this);
