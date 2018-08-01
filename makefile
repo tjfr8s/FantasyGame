@@ -26,7 +26,11 @@ CharacterTest: Character.o CharacterTest.o Battle.o Vampire.o Dice.o
 VampireTest: Character.o VampireTest.o Battle.o Vampire.o Dice.o
 	$(CXX) $^ -o VampireTest 
 
-BattleTest: Character.o BattleTest.o Battle.o Vampire.o Dice.o
+
+MedusaTest: Character.o MedusaTest.o Battle.o Medusa.o Dice.o Vampire.o
+	$(CXX) $^ -o MedusaTest 
+
+BattleTest: Character.o BattleTest.o Battle.o Vampire.o Dice.o Medusa.o
 	$(CXX) $^ -o BattleTest 
 
 
