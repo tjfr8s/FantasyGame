@@ -20,8 +20,11 @@ BattleGame: $(OBJS)
 DiceTest: Dice.o DiceTest.o
 	$(CXX) $^ -o DiceTest 
 
-CharacterTest: Character.o CharacterTest.o Battle.o Vampire.o
+CharacterTest: Character.o CharacterTest.o Battle.o Vampire.o Dice.o
 	$(CXX) $^ -o CharacterTest 
+
+VampireTest: Character.o VampireTest.o Battle.o Vampire.o Dice.o
+	$(CXX) $^ -o VampireTest 
 
 
 #AnimalTest: Animal.o AnimalTest.o
@@ -40,7 +43,7 @@ $(OBJS): $(SRCS) $(INCS)
 
 .PHONY: clean
 clean:
-	rm *.o BattleGame
+	rm *.o BattleGame CharacterTest VampireTest
 
 	
 
