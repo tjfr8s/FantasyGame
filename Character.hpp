@@ -1,6 +1,9 @@
 #ifndef CHARACTER_HPP
 #define CHARACTER_HPP
+
 #include <string>
+#include "Dice.hpp"
+
 class Battle;
 class Character
 {
@@ -42,7 +45,7 @@ public:
     virtual ~Character();
 
     virtual void attack(Character* opponent) = 0;
-    virtual void defend(int attackRoll) = 0;
+    virtual int defend(int attackRoll) = 0;
     virtual bool specDefend() = 0;
     friend  std::ostream& operator<<(std::ostream& out, Character* character);
 };
