@@ -37,5 +37,9 @@ std::ostream& operator<<(std::ostream& out, Character* character)
     return out;
 }
 
+void Character::die()
+{
+    m_strength = 0;
+}
 
 
