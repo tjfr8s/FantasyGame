@@ -16,7 +16,6 @@ void Vampire::attack(Character* opponent)
     std::cout << "\nAttack roll: " << roll << "\n";
     if(opponent->defend(roll) <= 0)
     {
-        std::cout <<"\nGameOver\n";
         m_battle->gameOver();
         m_battle->setWinner(this);
     }
