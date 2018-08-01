@@ -44,6 +44,9 @@ public:
     virtual void attack(Character* opponent) = 0;
     virtual void defend(int attackRoll) = 0;
     virtual bool specDefend() = 0;
+    friend  std::ostream& operator<<(std::ostream& out, Character* character);
 };
+
+std::ostream& operator<<(std::ostream& out, Character* character);
 
 #endif
