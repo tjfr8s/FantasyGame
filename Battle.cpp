@@ -2,6 +2,7 @@
 #include "Battle.hpp"
 #include "Character.hpp"
 #include "Vampire.hpp"
+#include "Medusa.hpp"
 
 
 Battle::Battle(): 
@@ -17,7 +18,7 @@ Battle::~Battle()
 
 void Battle::playGame()
 {
-    m_player1 = new Vampire(this);
+    m_player1 = new Medusa(this);
     m_player2 = new Vampire(this);
 
     while(!m_gameOver)
@@ -73,5 +74,6 @@ void Battle::menu()
 
 void Battle::gameOver()
 {
+    std::cout << "\nGame Over\n";
     m_gameOver = true;
 }
