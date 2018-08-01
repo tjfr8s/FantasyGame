@@ -31,6 +31,8 @@ public:
               int defense, 
               int armor,
               int strength,
+              std::string traits,
+              CharType type,
               Battle* battle,
               int defDiceSides,
               int defDiceNum,
