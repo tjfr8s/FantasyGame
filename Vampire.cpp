@@ -7,6 +7,9 @@ Vampire::Vampire(Battle* battle):
     Character(12, 6, 1, 18,"", Character::VAMPIRE, battle, 6, 1, 12, 1)
 {}
 
+Vampire::~Vampire()
+{}
+
 void Vampire::attack(Character* opponent)
 {
     int roll = rollDice(m_atkDiceNum, m_atkDiceSides); 
@@ -14,7 +17,8 @@ void Vampire::attack(Character* opponent)
     if(opponent->defend(roll) <= 0)
     {
         std::cout <<"\nGameOver\n";
-        // m_battle->gameOver();
+        m_battle->gameOver();
+        m_battle->setWinner(this);
     }
 
 }
