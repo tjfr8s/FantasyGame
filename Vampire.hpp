@@ -8,8 +8,9 @@ public:
     Vampire(Battle* battle);
 
     virtual void attack(Character* opponent);
-    virtual void defend(int attackRoll);
+    virtual int defend(int attackRoll);
     virtual bool specDefend();
+    bool charm();
 
 };
 
