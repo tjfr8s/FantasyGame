@@ -26,6 +26,9 @@ CharacterTest: Character.o CharacterTest.o Battle.o Vampire.o Dice.o
 VampireTest: Character.o VampireTest.o Battle.o Vampire.o Dice.o
 	$(CXX) $^ -o VampireTest 
 
+BattleTest: Character.o BattleTest.o Battle.o Vampire.o Dice.o
+	$(CXX) $^ -o BattleTest 
+
 
 #AnimalTest: Animal.o AnimalTest.o
 #	$(CXX) $^ -o AnimalTest
@@ -43,7 +46,7 @@ $(OBJS): $(SRCS) $(INCS)
 
 .PHONY: clean
 clean:
-	rm *.o BattleGame CharacterTest VampireTest
+	rm *.o BattleGame CharacterTest VampireTest BattleTest
 
 	
 
