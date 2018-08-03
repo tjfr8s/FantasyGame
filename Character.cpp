@@ -1,6 +1,27 @@
+/*******************************************************************************
+ * Author: Tyler Freitas
+ * Date: 20180802
+ * Description: This abstract class describes a generic character for a fantasy 
+ * game. It has data members for the characters armor, strength, traits, type,
+ * battle, and dice. 
+*******************************************************************************/ 
 #include "Character.hpp"
 #include <iostream>
 
+/*******************************************************************************
+ * Description: Constructor that takes the following parameters:
+ * - armor
+ * - strength
+ * - traits
+ * - type
+ * - battle
+ * - defDiceNum
+ * - defDiceSides
+ * - atkDiceNum
+ * -atkDiceSides
+ * the constructor initializes data members to the values of the passed 
+ * parameters.
+*******************************************************************************/ 
 Character::Character(int armor,
                      int strength,
                      std::string traits,
@@ -21,21 +42,13 @@ Character::Character(int armor,
     m_atkDiceNum(atkDiceNum)
 {}
 
+
+/*******************************************************************************
+ * Description: virtual desctuctor.
+*******************************************************************************/ 
 Character::~Character()
 {}
 
-std::ostream& operator<<(std::ostream& out, Character* character)
-{
-    out << "\nArmor: " << character->m_armor << 
-        "\nStrength: " << character->m_strength << "\nTraits: " <<
-        character->m_traits << "\nType: " << character->getTypeString() << 
-        "\nDefense dice: " << 
-        character->m_defDiceSides << " " << character->m_defDiceNum <<
-        "\nAttack dice: " << character->m_atkDiceSides << " " << 
-        character->m_atkDiceNum;
-
-    return out;
-}
 
 
 std::string Character::getTypeString()
@@ -62,9 +75,27 @@ std::string Character::getTypeString()
     return type;
 }
 
+
+/*******************************************************************************
+ * Description: Function that sets the characters strength equal to 0.
+*******************************************************************************/ 
 void Character::die()
 {
     m_strength = 0;
+}
+
+
+std::ostream& operator<<(std::ostream& out, Character* character)
+{
+    out << "\nArmor: " << character->m_armor << 
+        "\nStrength: " << character->m_strength << "\nTraits: " <<
+        character->m_traits << "\nType: " << character->getTypeString() << 
+        "\nDefense dice: " << 
+        character->m_defDiceSides << " " << character->m_defDiceNum <<
+        "\nAttack dice: " << character->m_atkDiceSides << " " << 
+        character->m_atkDiceNum;
+
+    return out;
 }
 
 
