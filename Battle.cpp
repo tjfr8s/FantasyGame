@@ -72,13 +72,14 @@ void Battle::playGame()
 {
 
     int count = 1;
-    while(!m_gameOver)
-    {
-        std::cout << "\n******************Round " << count << 
-            "****************\n";
 
         std::cout << "\nPlayer1:" << m_player1 << 
             "\n\nPlayer2:" << m_player2 << "\n\n";
+    while(!m_gameOver)
+    {
+        
+        std::cout << "\n******************Round " << count << 
+            "****************\n";
         playRound(); 
         count++;
     }
@@ -104,6 +105,10 @@ void Battle::playRound()
 
 void Battle::takeTurn(Character* attacker, Character* defender)
 {
+    std::cout << "1. Attacker type: " << attacker->getTypeString() << "\n";
+    std::cout << "2. Defender type: " << defender->getTypeString() << 
+        ", armor: " << defender->getArmor() << ", strength: " << 
+        defender->getStrength();
     if(!defender->specDefend())
     {
         attacker->attack(defender);
@@ -112,9 +117,13 @@ void Battle::takeTurn(Character* attacker, Character* defender)
     {
         std::cout << "\nno attack\n";
     }
+    std::cout << "6. Defenders updated strength: " << defender->getStrength() <<
+        "\n";
+    if(m_gameOver)
+    {
+        std::cout << "\n\n ** GAME OVER ** \n\n";
+    }
 
-    std::cout << "\n\nPlayer1:" << m_player1 << 
-        "\n\nPlayer2:" << m_player2 << "\n\n";
 }
 
 void Battle::menu()
@@ -122,6 +131,5 @@ void Battle::menu()
 
 void Battle::gameOver()
 {
-    std::cout << "\nGame Over\n";
     m_gameOver = true;
 }

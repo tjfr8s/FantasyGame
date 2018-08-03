@@ -14,7 +14,7 @@ Medusa::~Medusa()
 void Medusa::attack(Character* opponent)
 {
     int roll = 12;//rollDice(m_atkDiceNum, m_atkDiceSides); 
-    std::cout << "\nAttack roll: " << roll << "\n";
+    std::cout << "\n3. Attack roll: " << roll << "\n";
     if(roll == 12)
     {
         std::cout << "Medusa used Glare!\n";
@@ -30,13 +30,13 @@ void Medusa::attack(Character* opponent)
 int Medusa::defend(int attackRoll)
 {
     int defRoll = rollDice(m_defDiceNum, m_defDiceSides);
-    std::cout << "Defense roll: " << defRoll << "\n";
+    std::cout << "4. Defense roll: " << defRoll << "\n";
     int damage = (attackRoll - defRoll - m_armor);
     if(damage < 0)
     {
         damage = 0;
     }
-    std::cout << "Damage: " << damage << "\n";
+    std::cout << "5. Damage: " << damage << "\n";
     if(damage > 0)
     {
         m_strength -= damage;

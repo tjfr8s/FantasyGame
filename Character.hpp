@@ -45,6 +45,9 @@ public:
     virtual int defend(int attackRoll) = 0;
     virtual bool specDefend() = 0;
     virtual void die();
+
+    int getArmor(){return m_armor;}
+    int getStrength(){return m_strength;}
     friend  std::ostream& operator<<(std::ostream& out, Character* character);
 };
 

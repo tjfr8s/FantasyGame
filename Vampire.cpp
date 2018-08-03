@@ -13,7 +13,7 @@ Vampire::~Vampire()
 void Vampire::attack(Character* opponent)
 {
     int roll = rollDice(m_atkDiceNum, m_atkDiceSides); 
-    std::cout << "\nAttack roll: " << roll << "\n";
+    std::cout << "\n3. Attack roll: " << roll << "\n";
     if(opponent->defend(roll) <= 0)
     {
         m_battle->setWinner(this);
@@ -23,13 +23,13 @@ void Vampire::attack(Character* opponent)
 int Vampire::defend(int attackRoll)
 {
     int defRoll = rollDice(m_defDiceNum, m_defDiceSides);
-    std::cout << "Defense roll: " << defRoll << "\n";
+    std::cout << "4. Defense roll: " << defRoll << "\n";
     int damage = (attackRoll - defRoll - m_armor);
     if(damage < 0)
     {
         damage = 0;
     }
-    std::cout << "Damage: " << damage << "\n";
+    std::cout << "5. Damage: " << damage << "\n";
     if(damage > 0)
     {
         m_strength -= damage;
@@ -49,6 +49,7 @@ bool Vampire::charm()
     int charmed = rand() % 2;
     if(charmed == 1)
     {
+        std::cout << "\nVampire used charm!";
         return true;
     }
     else
