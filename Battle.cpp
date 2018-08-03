@@ -5,6 +5,7 @@
 #include "Medusa.hpp"
 #include "Barbarian.hpp"
 #include "HarryPotter.hpp"
+#include "BlueMen.hpp"
 
 
 Battle::Battle(): 
@@ -20,8 +21,8 @@ Battle::~Battle()
 
 void Battle::playGame()
 {
-    m_player1 = new Medusa(this);
-    m_player2 = new HarryPotter(this);
+    m_player1 = new BlueMen(this);
+    m_player2 = new BlueMen(this);
 
     while(!m_gameOver)
     {
