@@ -5,7 +5,7 @@
 #include "Vampire.hpp"
 
 Medusa::Medusa(Battle* battle): 
-    Character(3, 8,"", Character::MEDUSA, battle, 6, 2, 6, 1)
+    Character(3, 8,"", Character::MEDUSA, battle, 6, 1, 6, 2)
 {}
 
 Medusa::~Medusa()
@@ -13,7 +13,7 @@ Medusa::~Medusa()
 
 void Medusa::attack(Character* opponent)
 {
-    int roll = 12;//rollDice(m_atkDiceNum, m_atkDiceSides); 
+    int roll = rollDice(m_atkDiceNum, m_atkDiceSides); 
     std::cout << "\n3. Attack roll: " << roll << "\n";
     if(roll == 12)
     {
