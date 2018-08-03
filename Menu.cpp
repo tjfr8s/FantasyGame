@@ -43,12 +43,21 @@ int getPlayer()
  ************************************************************/
 void runMenu()
 {
-    std::cout << "Choose character for player 1:\n " << std::endl;
-    int p1Choice = getPlayer();
-    std::cout << "Choose character for player 2:\n " << std::endl;
-    int p2Choice = getPlayer();
-    Battle battle(p1Choice, p2Choice);
-    battle.playGame();
+    int quitChoice = 1;
+    while(quitChoice != 2)
+    {
+        std::cout << "Choose character for player 1:\n " << std::endl;
+        int p1Choice = getPlayer();
+        std::cout << "Choose character for player 2:\n " << std::endl;
+        int p2Choice = getPlayer();
+        Battle battle(p1Choice, p2Choice);
+        battle.playGame();
+
+        std::cout << "\n1. Play Again\n" << "2. Quit";
+        quitChoice = intInputValidation(1,2);
+        
+
+    }
     return;
 }
 
