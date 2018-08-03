@@ -71,12 +71,16 @@ Battle::~Battle()
 void Battle::playGame()
 {
 
+    int count = 1;
     while(!m_gameOver)
     {
-        std::cout << "\n******************Round***************\n";
-        std::cout << "\nPlayer1:\n" << m_player1 << 
-            "\n\nPlayer2:\n" << m_player2 << "\n";
+        std::cout << "\n******************Round " << count << 
+            "****************\n";
+
+        std::cout << "\nPlayer1:" << m_player1 << 
+            "\n\nPlayer2:" << m_player2 << "\n\n";
         playRound(); 
+        count++;
     }
 
     m_winner = nullptr;
@@ -84,10 +88,15 @@ void Battle::playGame()
 
 void Battle::playRound()
 {
+    std::cout << "****************\n";
+    std::cout << "Player 1's turn:\n";
+    std::cout << "****************\n";
     takeTurn(m_player1, m_player2);
     if(!m_gameOver)
     {
-      
+        std::cout << "****************\n";
+        std::cout << "Player 2's turn:\n";
+        std::cout << "****************\n";
         takeTurn(m_player2, m_player1);
     }
 
@@ -104,8 +113,8 @@ void Battle::takeTurn(Character* attacker, Character* defender)
         std::cout << "\nno attack\n";
     }
 
-    std::cout << "\n\nPlayer1:\n" << m_player1 << 
-        "\n\nPlayer2:\n" << m_player2 << "\n";
+    std::cout << "\n\nPlayer1:" << m_player1 << 
+        "\n\nPlayer2:" << m_player2 << "\n\n";
 }
 
 void Battle::menu()
