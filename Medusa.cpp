@@ -23,7 +23,6 @@ void Medusa::attack(Character* opponent)
     }
     else if(opponent->defend(roll) <= 0)
     {
-        m_battle->gameOver();
         m_battle->setWinner(this);
     }
 
@@ -37,6 +36,11 @@ int Medusa::defend(int attackRoll)
     if(damage > 0)
     {
         m_strength -= damage;
+    }
+
+    if(m_strength <= 0)
+    {
+        m_battle->gameOver();
     }
     return m_strength;
 }

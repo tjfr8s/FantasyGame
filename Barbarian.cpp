@@ -16,7 +16,6 @@ void Barbarian::attack(Character* opponent)
     std::cout << "\nAttack roll: " << roll << "\n";
     if(opponent->defend(roll) <= 0)
     {
-        m_battle->gameOver();
         m_battle->setWinner(this);
     }
 
@@ -30,6 +29,11 @@ int Barbarian::defend(int attackRoll)
     if(damage > 0)
     {
         m_strength -= damage;
+    }
+
+    if(m_strength <= 0)
+    {
+        m_battle->gameOver();
     }
     return m_strength;
 }
