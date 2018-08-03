@@ -19,7 +19,7 @@ void Medusa::attack(Character* opponent)
     {
         std::cout << "Medusa used Glare!\n";
         opponent->die();
-        opponent->defend(0);
+        opponent->defend(12);
     }
     else if(opponent->defend(roll) <= 0)
     {
