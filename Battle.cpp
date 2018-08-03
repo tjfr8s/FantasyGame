@@ -8,30 +8,53 @@
 #include "BlueMen.hpp"
 
 
-Battle::Battle(): 
+Battle::Battle(int p1, int p2): 
     m_player1(nullptr),
     m_player2(nullptr),
     m_winner(nullptr),
     m_gameOver(false)
-{}
+{
+    switch(p1)
+    {
+        case 1:
+            m_player1 = new Vampire(this);
+            break;
+        case 2:
+            m_player1 = new Medusa(this);
+            break;
+        case 3:
+            m_player1 = new Barbarian(this);
+            break;
+        case 4:
+            m_player1 = new BlueMen(this);
+            break;
+        case 5:
+            m_player1 = new HarryPotter(this);
+            break;
+    }
+
+    switch(p2)
+    {
+        case 1:
+            m_player2 = new Vampire(this);
+            break;
+        case 2:
+            m_player2 = new Medusa(this);
+            break;
+        case 3:
+            m_player2 = new Barbarian(this);
+            break;
+        case 4:
+            m_player2 = new BlueMen(this);
+            break;
+        case 5:
+            m_player2 = new HarryPotter(this);
+            break;
+    }
+}
 
 Battle::~Battle()
 {
-}
-
-void Battle::playGame()
-{
-    m_player1 = new BlueMen(this);
-    m_player2 = new BlueMen(this);
-
-    while(!m_gameOver)
-    {
-        std::cout << "\n******************Round***************\n";
-        std::cout << "\nPlayer1:\n" << m_player1 << 
-            "\n\nPlayer2:\n" << m_player2 << "\n";
-        playRound(); 
-    }
-
     if(m_player1 != nullptr)
     {
         delete m_player1;
@@ -43,6 +66,19 @@ void Battle::playGame()
         delete m_player2;
         m_player2 = nullptr;
     }  
+}
+
+void Battle::playGame()
+{
+
+    while(!m_gameOver)
+    {
+        std::cout << "\n******************Round***************\n";
+        std::cout << "\nPlayer1:\n" << m_player1 << 
+            "\n\nPlayer2:\n" << m_player2 << "\n";
+        playRound(); 
+    }
+
     m_winner = nullptr;
 }
 

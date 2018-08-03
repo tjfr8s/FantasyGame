@@ -10,7 +10,7 @@ private:
     Character* m_winner;
     bool m_gameOver;
 public:
-    Battle();
+    Battle(int p1, int p2);
     ~Battle();
 
     void playGame();

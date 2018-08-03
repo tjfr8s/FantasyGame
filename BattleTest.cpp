@@ -5,7 +5,7 @@
 
 int main()
 {
-    Battle battle;
+    Battle battle(Character::BLUEMEN, Character::HARRYPOTTER);
     srand(time(NULL));
     rand();
 
