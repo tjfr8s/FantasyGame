@@ -39,6 +39,7 @@ public:
               int atkDiceNum);
 
     virtual ~Character();
+    virtual std::string getType();
 
     virtual void attack(Character* opponent) = 0;
     virtual int defend(int attackRoll) = 0;

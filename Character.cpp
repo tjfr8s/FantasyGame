@@ -37,6 +37,31 @@ std::ostream& operator<<(std::ostream& out, Character* character)
     return out;
 }
 
+
+std::string Character::getType()
+{
+    std::string type;
+    switch(m_type)
+    {
+        case VAMPIRE:
+            type = "VAMPIRE";
+            break;
+        case MEDUSA:
+            type = "MEDUSA";
+            break;
+        case BARBARIAN:
+            type = "BARBARIAN";
+            break;
+        case BLUEMEN:
+            type = "BLUEMEN";
+            break;
+        case HARRYPOTTER:
+            type = "HARRYPOTTER";
+            break;
+    }
+    return type;
+}
+
 void Character::die()
 {
     m_strength = 0;
