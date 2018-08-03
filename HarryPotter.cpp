@@ -45,6 +45,7 @@ int HarryPotter::defend(int attackRoll)
     }
     if(m_strength <= 0)
     {
+        m_strength = 0;
         m_battle->gameOver();
     }
     return m_strength;

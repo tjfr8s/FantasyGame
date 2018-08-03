@@ -45,6 +45,7 @@ int BlueMen::defend(int attackRoll)
     }
     if(m_strength <= 0)
     {
+        m_strength = 0;
         m_battle->gameOver();
     }
 
