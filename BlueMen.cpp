@@ -25,19 +25,23 @@ int BlueMen::defend(int attackRoll)
     int defRoll = rollDice(m_defDiceNum, m_defDiceSides);
     std::cout << "Defense roll: " << defRoll << "\n";
     int damage = (attackRoll - defRoll - m_armor);
+    if(damage < 0)
+    {
+        damage = 0;
+    }
     std::cout << "Damage: " << damage << "\n";
     if(damage > 0)
     {
         m_strength -= damage;
     }
 
-    if(m_strength <= 8)
-    {
-        m_defDiceNum = 2;
-    }
-    else if(m_strength <= 4)
+    if(m_strength <= 4)
     {
         m_defDiceNum = 1;
+    }
+    else if(m_strength <= 8)
+    {
+        m_defDiceNum = 2;
     }
     if(m_strength <= 0)
     {
