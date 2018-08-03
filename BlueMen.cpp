@@ -16,7 +16,6 @@ void BlueMen::attack(Character* opponent)
     std::cout << "\nAttack roll: " << roll << "\n";
     if(opponent->defend(roll) <= 0)
     {
-        m_battle->gameOver();
         m_battle->setWinner(this);
     }
 
@@ -39,6 +38,10 @@ int BlueMen::defend(int attackRoll)
     else if(m_strength <= 4)
     {
         m_defDiceNum = 1;
+    }
+    if(m_strength <= 0)
+    {
+        m_battle->gameOver();
     }
 
     return m_strength;
