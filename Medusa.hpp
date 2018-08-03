@@ -14,7 +14,7 @@ class Medusa: public Character
 {
 public:
 /*******************************************************************************
- * Description: Constructor that initializes member variables to Vampire values
+ * Description: Constructor that initializes member variables to Medusa values
  * via the Character constructor.
 *******************************************************************************/ 
     Medusa(Battle* battle);
