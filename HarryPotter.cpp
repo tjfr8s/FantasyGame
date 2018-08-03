@@ -16,7 +16,6 @@ void HarryPotter::attack(Character* opponent)
     std::cout << "\nAttack roll: " << roll << "\n";
     if(opponent->defend(roll) <= 0)
     {
-        m_battle->gameOver();
         m_battle->setWinner(this);
     }
 
