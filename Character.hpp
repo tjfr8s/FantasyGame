@@ -10,11 +10,11 @@ class Character
 public:
     enum CharType
     {
-        VAMPIRE,
-        MEDUSA,
-        BARBARIAN,
-        BLUEMEN,
-        HARRYPOTTER,
+        VAMPIRE = 1,
+        MEDUSA = 2,
+        BARBARIAN = 3,
+        BLUEMEN = 4,
+        HARRYPOTTER = 5,
     };
 protected:
     int m_armor;
