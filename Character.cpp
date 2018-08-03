@@ -29,7 +29,7 @@ std::ostream& operator<<(std::ostream& out, Character* character)
     out << "\nArmor: " << character->m_armor << 
         "\nStrength: " << character->m_strength << "\nTraits: " <<
         character->m_traits << "\nType: " << character->getTypeString() << 
-        "\nBattle: " << character->m_battle <<  "\nDefense dice: " << 
+        "\nDefense dice: " << 
         character->m_defDiceSides << " " << character->m_defDiceNum <<
         "\nAttack dice: " << character->m_atkDiceSides << " " << 
         character->m_atkDiceNum;
