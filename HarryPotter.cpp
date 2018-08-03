@@ -4,7 +4,7 @@
 #include "HarryPotter.hpp"
 
 HarryPotter::HarryPotter(Battle* battle): 
-    Character(0, 10,"", Character::BARBARIAN, battle, 6, 2, 6, 2)
+    Character(0, 10,"", Character::HARRYPOTTER, battle, 6, 2, 6, 2)
 {}
 
 HarryPotter::~HarryPotter()
